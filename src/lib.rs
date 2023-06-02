@@ -273,6 +273,6 @@ fn test1() {
 fn test2() {
     let stack = EmptyStack;
     let stack = intrerpret(Push(8, PhantomData), stack);
-    //error because not enough elements in stack
+    //error because not enough elements in the stack
     let stack = intrerpret(Add(PhantomData), stack);
 }
