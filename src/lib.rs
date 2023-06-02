@@ -263,10 +263,16 @@ where
     R::run(i, stack)
 }
 
-fn test() {
+fn test1() {
     let stack = EmptyStack;
     let stack = intrerpret(Push(8, PhantomData), stack);
-    let stack = intrerpret(Pop, stack);
     let stack = intrerpret(Push(9, PhantomData), stack);
+    let stack = intrerpret(Add(PhantomData), stack);
+}
+
+fn test2() {
+    let stack = EmptyStack;
+    let stack = intrerpret(Push(8, PhantomData), stack);
+    //error because not enough elements in stack
     let stack = intrerpret(Add(PhantomData), stack);
 }
